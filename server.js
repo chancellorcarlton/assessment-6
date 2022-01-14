@@ -17,18 +17,18 @@ rollbar.log('Hello world!')
 
 app.use(express.json())
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-    rollbar.info('html file retrieved')
-});
+// app.get('/', function(req, res) {
+//     res.sendFile(path.join(__dirname, '/public/index.html'))
+//     rollbar.info('html file retrieved')
+// });
 
-app.get('/styles', function(req, res) {
-    res.sendFile(path.join(__dirname, '/public/index.css'))
-});
+// app.get('/styles', function(req, res) {
+//     res.sendFile(path.join(__dirname, '/public/index.css'))
+// });
 
-app.get('/js', function(req, res) {
-    res.sendFile(path.join(__dirname, '/public/index.js'))
-});
+// app.get('/js', function(req, res) {
+//     res.sendFile(path.join(__dirname, '/public/index.js'))
+// });
 
 app.use(express.static('public')) 
 
