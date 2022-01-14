@@ -33,6 +33,7 @@ app.use(express.json())
 app.use(express.static('public')) 
 
 app.get('/api/robots', (req, res) => {
+    rollbar.info('someone requested our list of bots')
     try {
         res.status(200).send(botsArr)
     } catch (error) {
@@ -43,6 +44,7 @@ app.get('/api/robots', (req, res) => {
 })
 
 app.get('/api/robots/five', (req, res) => {
+    rollbar.info('someone drew five bots')
     try {
         let shuffled = shuffleArray(bots)
         let choices = shuffled.slice(0, 5)
